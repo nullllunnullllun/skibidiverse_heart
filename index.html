@@ -8,7 +8,7 @@
 <body>
     <style>
         body {
-            background: linear-gradient(square, rgb(113, 46, 183));
+            background-color: rgb(8, 0, 49);
             height: 100vh;
             overflow: hidden;
             display: flex;
@@ -16,8 +16,50 @@
             align-items: center;
             position: relative;
         }
+
+        .body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+        }
+
+        .heart-container {
+            animation: pulse 2s infinite;
+            transition: transform 0.3;
+            filter: drop-shadow(0 0 15px #1d1b33);
+            font-size: 250px;
+            cursor: pointer;
+
+        }
+
+        .heart {
+            color: #ff4da6;
+            text-shadow: 
+            0 0 8px #ff4da6,
+            0 0 15px #ff4da6,
+            0 0 25px #ff4da6,
+            0 0 40px #ff4da6;
+        }
+
+        .heart-container:hover {
+            transform: scale(1.1) rotate(2deg);
+            filter: drop-shadow(0 0 30px #ff4da6) hue-rotate(45deg);
+        }
+
+        @keyframes pulse {
+            0%, 100%{
+                transform: scale(1.05);
+            }
+            50%{
+                transform: scale(1.05);
+            }
+        }
     </style>
-    <h1>❤❤</h1>
-    <p>❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤</p>
+    <div>
+    <span class="heart">💖</span>
+    </div>
 </body>
 </html>
